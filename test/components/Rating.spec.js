@@ -4,8 +4,29 @@ import Rating from '@/components/Rating.vue'
 let wrapper = null
 
 beforeEach(() => {
-  wrapper = shallowMount(Rating)
+  wrapper = shallowMount(Rating, {
+    propsData: {
+      maxStars: 5,
+      initialRating: 2
+    }
+  })
 })
 
 describe('Rating.vue', () => {
+  it('renders the stars', () => {
+    const stars = wrapper.findAll('.star')
+
+    expect(stars.length).toBe(5)
+  })
+
+  it('renders the active stars', () => {
+    const active = wrapper.findAll('.active.star')
+
+    expect(active.length).toBe(2)
+  })
+  it('renders a summary', () => {
+    const summary = wrapper.find('.summary')
+
+    expect(summary.text()).toBe('2 of 5')
+  })
 })
