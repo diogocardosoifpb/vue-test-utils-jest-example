@@ -9,6 +9,7 @@
     "test": "jest --watch"
   },
   "dependencies": {
+    "regenerator-runtime": "^0.14.0",
     "vue": "^2.4.4"
   },
   "devDependencies": {
