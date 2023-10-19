@@ -1,10 +1,11 @@
 <template>
   <div id="app">
-    
+    <rating />
   </div>
 </template>
 
 <script>
+import Rating from './components/Rating.vue'
 
 export default {
   components: {
